@@ -15,7 +15,7 @@ _Лендинг киберспортивного турнира.
 
 ## 🌌 Демо
 
-[**void-championship.vercel.app**](https://)
+[**void-championship.vercel.app**](https://void-championship.vercel.app/)
 
 ## 🛸 Особенности
 
