@@ -9,6 +9,9 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space
 export const metadata: Metadata = {
   title: "Void Championship — Abyssal Arena",
   description: "Киберспортивный турнир в космической бездне.",
+  icons: {
+    icon: "/icon.svg",
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

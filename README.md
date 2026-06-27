@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🕳️ Void Championship — Abyssal Arena
 
-## Getting Started
+_Лендинг киберспортивного турнира.  
+Мрачная космическая бездна, золотой акцент._
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
+[![Three.js](https://img.shields.io/badge/Three.js-r185-black?logo=three.js)](https://threejs.org/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-ff69b4)](https://www.framer.com/motion/)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://vercel.com)
+
+![Превью лендинга](./public/og-image.png)
+
+## 🌌 Демо
+
+[**void-championship.vercel.app**](https://)
+
+## 🛸 Особенности
+
+- **Интерактивная 3D-сцена** – летающая тарелка (НЛО) с лучом энергии над клочком земли поднимая свиней, звёздное небо и пост-обработка Bloom.
+- **Атмосферный прелоадер** – анимация погружения в бездну перед показом сцены.
+- **Адаптивный дизайн** – mobile-first, корректное отображение на любых устройствах.
+- **Система авторизации** – регистрация и вход (мок-сервис), контекст пользователя, персонализированное приветствие.
+- **Плавные анимации** – Framer Motion для появления секций, карточек, мобильного меню.
+- **Валидация форм** – React Hook Form + Zod, индикатор сложности пароля.
+- **Типизированный код** – TypeScript во всех компонентах и утилитах.
+- **Кастомная тёмная тема** – Tailwind v4 с `@theme`: глубокие фиолетовые и золотые акценты.
+- **Оптимизация** – динамический импорт 3D-сцены (нет SSR), Suspense, ленивая загрузка.
+
+## 🧱 Технический стек
+
+- **Фреймворк:** Next.js 16 (App Router)
+- **Язык:** TypeScript
+- **Стили:** Tailwind CSS v4
+- **3D-графика:** React Three Fiber, Drei, Postprocessing
+- **Анимации:** Framer Motion
+- **Формы:** React Hook Form + Zod
+- **Иконки:** Lucide React
+- **Деплой:** Vercel
+
+## 🚀 Быстрый старт
 
 ```bash
+# Клонируйте репозиторий
+git clone https://github.com/Tomreet/void-championship.git
+cd void-championship
+
+# Установите зависимости
+npm install
+
+# Запустите dev-сервер
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте http://localhost:3000 в браузере.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Структура проекта
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+public/
+  ├── models/          # 3D-модели (.glb)
+  └── screenshots/     # скриншоты для README
+src/
+  ├── app/             # роутинг (layout, page, register, login)
+  ├── components/      # секции и UI-компоненты
+  │   ├── hero/        # Hero с 3D-сценой
+  │   ├── features/    # карточки преимуществ
+  │   ├── teams/       # карточки команд
+  │   ├── schedule/    # расписание матчей
+  │   ├── prizes/      # призовой фонд
+  │   ├── faq/         # вопросы-ответы
+  │   ├── newsletter/  # форма подписки
+  │   ├── layout/      # Header, Footer, MobileMenu
+  │   └── ui/          # кнопки, инпуты
+  ├── contexts/        # AuthContext
+  ├── hooks/           # useMediaQuery, useScrollAnimation, useParallax
+  ├── lib/             # данные, утилиты, валидаторы, мок-аутентификация
+  └── styles/          # глобальные стили
+.env.local.example     # пример переменных окружения
+next.config.js
+tailwind.config.ts
+tsconfig.json
+README.md
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Автор:** [MrKrabsArt]  
+**Лицензия:** MIT
