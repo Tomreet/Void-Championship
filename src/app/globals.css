@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-void-950: #0a0514;
+  --color-void-900: #110b24;
+  --color-void-800: #1c1335;
+  --color-void-700: #2a1d4a;
+  --color-gold-400: #c9a84c;
+  --color-gold-500: #b8923f;
+  --color-neon-purple: #9b59b6;
+  --color-neon-cyan: #00e5ff;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --shadow-glow: 0 0 40px rgba(185, 146, 63, 0.25);
+  --shadow-glow-lg: 0 0 80px rgba(185, 146, 63, 0.4);
+  --shadow-neon-purple: 0 0 30px rgba(155, 89, 182, 0.5);
+  --shadow-inner-glow: inset 0 0 20px rgba(185, 146, 63, 0.15);
+  --animate-shimmer: shimmer 2s infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-void-950);
+  color: rgba(199, 210, 254, 0.8);
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', sans-serif;
+  user-select: none;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold-400) var(--color-void-800);
+}
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--color-void-800);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-gold-400);
+  border-radius: 10px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, var(--color-void-950) 90%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
