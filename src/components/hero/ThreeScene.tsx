@@ -51,7 +51,7 @@ export default function ThreeScene({ onReady }: ThreeSceneProps) {
           autoRotate
           autoRotateSpeed={0.2}
           maxPolarAngle={Math.PI / 2.2}
-          enableRotate={true}
+          enableRotate={isTouchDevice}
         />
 
         <EffectComposer>
